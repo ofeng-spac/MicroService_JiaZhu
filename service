@@ -2,3 +2,13 @@ StereoMatcherService.py
 sub：jz/capture/*/stereo_ir 
 queue main loop
 匹配完成后将视差图put :jz/stereo_matcher/dispairty
+
+
+PointCloudMatcherService.py
+要事先提前加载好各自的点云模板
+sub：jz/stereo_matcher/dispairty
+queue main loop
+dispairty to cloud
+将cloud 与 模板匹配
+计算得到transform
+put：jz/pointcloud_matcher/transform
